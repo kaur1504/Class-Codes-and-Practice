@@ -1,0 +1,19 @@
+class Solution {
+    public static int countNumberswith4(int n) {
+       int ans=0;
+       for(int x=1;x<=n;x++){
+          ans+=countno(x) ? 1 : 0;
+           
+       }
+       return ans;
+    }
+    private static boolean countno(int x){
+        while(x!=0){
+            if(x%10==4){
+                return true;
+            }
+               x=x/10;
+        }
+            return false;
+    }
+}
