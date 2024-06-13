@@ -1,0 +1,19 @@
+import java.util.*;
+public class insertion_sort {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int[]arr={5,4,1,2,3};
+        for(int i=1;i<arr.length;i++){
+            int p=i;
+            while(p>0 && arr[p]<arr[p-1]){
+                int temp=arr[p];
+                arr[p]=arr[p-1];
+                arr[p-1]=temp;
+                p--;
+            }
+
+        }
+        System.out.print(Arrays.toString(arr));
+    }
+
+}
