@@ -1,0 +1,16 @@
+class Solution {
+    public int findDuplicate(int[] nums) {
+    int ans=0;
+        for(int i=0;i<nums.length;i++){
+            int idx=Math.abs(nums[i])-1;
+            if(nums[idx]>0){
+                nums[idx]*=-1;
+            }
+            else{
+                ans=Math.abs(nums[i]);
+                break;
+            }
+        }
+        return ans;
+    }
+}
