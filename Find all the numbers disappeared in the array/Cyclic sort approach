@@ -1,0 +1,30 @@
+class Solution {
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+       cyclicsort(nums); 
+       List<Integer> list=new ArrayList<>();
+        for(int i=0;i<nums.length;i++){
+        if(nums[i]!= i+1){
+            list.add(i+1);
+        }
+        }
+        return list;
+    }
+    public static void cyclicsort(int[]nums){
+        for(int i=0;i<nums.length;i++){
+            while(nums[i]!=i+1){
+                int idx=nums[i]-1;
+                if(nums[i]!= nums[idx]){
+                    swap(nums,i,idx);
+                }
+                else{
+                    break;
+                }
+        }
+    }
+    }
+   public static void swap(int[]nums,int i,int idx){
+        int temp=nums[i];
+       nums[i]=nums[idx];
+        nums[idx]=temp;    }
+        
+}
