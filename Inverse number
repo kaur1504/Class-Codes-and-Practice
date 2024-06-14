@@ -1,0 +1,23 @@
+import java.util.*;
+public class inverse_no {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int temp = n;
+        int count = 0;
+        int sum=0;
+        while (temp != 0) {
+            temp = temp / 10;
+            count += 1;
+        }
+        int i = 1;
+        while (i <= count) {
+            int digit = n % 10;
+            int a = i * (int) Math.pow(10, digit-1);
+            n = n / 10;
+            sum=sum+a;
+            i++;
+        }
+        System.out.print(sum);
+    }
+}
