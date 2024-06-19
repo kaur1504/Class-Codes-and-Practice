@@ -1,0 +1,29 @@
+public class Palindrome_string {
+    public static void main(String[] args) {
+        String str="abba";
+        System.out.print(string(str));
+    }
+    public static int string(String str){
+        int flag=0;
+        if(str.length()==1){
+            return 1;
+        }
+        int a=0;
+        int b=str.length()-1;
+        while(a<b){
+            if(str.charAt(a)==str.charAt(b)){
+                flag=1;
+            }
+            else{
+                flag=0;
+                break;
+            }
+            a++;
+            b--;
+        }
+        if(flag==0){
+            return 0;
+        }
+        return 1;
+    }
+}
