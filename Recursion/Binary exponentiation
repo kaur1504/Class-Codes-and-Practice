@@ -1,0 +1,21 @@
+public class binary_exponentiation {
+    public static void main(String[] args) {
+        int base=2;
+        int n=5;
+        System.out.print(exp(base,n));
+    }
+    public static int exp(int base,int n){
+        if(n==0){
+            return 1;
+        }
+        if(n==1) {
+            return base;
+        }
+        int half=exp(base,n/2);//time complexity:O(log n) BINARY EXPONENTIATION
+        int full=half*half;
+        if(n%2==0) {
+          return full;
+        }
+        return base*full;
+    }
+}
