@@ -1,0 +1,32 @@
+public class recusrive_sum {
+    public int SumofDigits(int A, int B)
+    {
+        int square=exp(A,B);
+        int result=sum(square);
+        int ans=sum(result);
+        if (result < 10)
+        {
+            return result;
+
+        }
+        return ans;
+    }
+    public static int sum(int n){
+        if(n==0) return 0;
+        return n%10+sum(n/10);
+    }
+    public static int exp(int A,int B){
+        if(B==0){
+            return 1;
+        }
+        if(B==1) {
+            return A;
+        }
+        int half=exp(A,B/2);//time complexity:O(log n) BINARY EXPONENTIATION
+        int full=half*half;
+        if(B%2==0) {
+            return full;
+        }
+        return A*full;
+    }
+}
