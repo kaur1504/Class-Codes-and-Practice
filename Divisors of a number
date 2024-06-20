@@ -1,0 +1,22 @@
+class Solution {
+    public static void print_divisors(int n) {
+        ArrayList<Integer> divisor = print(n);
+        for (int div : divisor) {
+            System.out.print(div + " ");
+        }
+    }
+    public static ArrayList<Integer> print(int n){
+        ArrayList<Integer> divisor=new ArrayList<>();
+        int sqrt=(int)Math.sqrt(n);
+        for(int i=1;i<=sqrt;i++){
+            if(n%i==0){
+                divisor.add(i);
+            if(i!=n/i){
+                divisor.add(n/i);
+            }
+            }
+        }
+        Collections.sort(divisor);
+        return divisor;
+    }
+}
