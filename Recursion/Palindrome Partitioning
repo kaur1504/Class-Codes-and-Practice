@@ -1,0 +1,44 @@
+class Solution {
+    public List<List<String>> partition(String s) {
+        List<List<String>>ans=new ArrayList<>();
+        List<String> list=new ArrayList<>();
+         palli(s,list,ans);
+         return ans;
+
+
+        
+    }
+    public static boolean ispallin(String str){
+        int s=0;
+        int e=str.length()-1;
+        while(s<=e){
+            if(str.charAt(s)!=str.charAt(e)){
+                return false;
+            }
+                s++;
+                e--;
+
+            }
+        
+        return true;
+    }
+    public static void palli(String que,List<String>list,List<List<String>>ans){
+        if(que.length()==0){
+            ans.add(new ArrayList<>(list));
+            return;
+            
+        }
+        for(int part=1;part<=que.length();part++){
+            String parti=que.substring(0,part);
+            String remain=que.substring(part);
+            if(ispallin(parti)){
+                list.add(parti);
+                palli(remain,list,ans);
+                list.remove(list.size()-1);
+            }
+
+        }
+
+    }
+
+}
